@@ -1,38 +1,209 @@
-.App {
-  text-align: center;
+:root {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    --text-primary: #ffffff;
+    --text-secondary: #ffffff;
+    --bg-primary: #2c99ff;
+    --bg-secondary: #2c99ff;
+    --transition-speed: 600ms;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    body::-webkit-scrollbar {
+        width: 0.25rem;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: #1e1e24;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: #1db8f1;
+    }
+
+main {
+    margin-left: 5rem;
+    padding: 1rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.ninja-navbar {
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 600ms ease;
+    overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.ninja-navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ninja-nav-item {
+    width: 100%;
+}
+
+
+
+.ninja-nav-link {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(1);
+    transition: var(--transition-speed);
+}
+
+    .ninja-nav-link:hover {
+        height: 5rem;
+        filter: drop-shadow(0px 0px 6px white);
+        background: var(--bg-secondary);
+        color: var(--text-secondary);
+    }
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+.ninja-nav-link svg {
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+
+.fa-primary {
+    color: #1d79f1;
+}
+
+.fa-secondary {
+    color: #1db8f1;
+}
+
+.fa-primary,
+.fa-secondary {
+    transition: var(--transition-speed);
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+    .logo svg {
+        transform: rotate(0deg);
+        transition: var(--transition-speed);
+    }
+
+.logo-text {
+    display: inline;
+    position: absolute;
+    left: -999px;
+    transition: var(--transition-speed);
+}
+
+.logo-img {
+    margin-left: 1rem;
+    width: 150px;
+}
+
+.ninja-navbar:hover .logo svg {
+    transform: rotate(-180deg);
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+    .ninja-navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 3rem;
+        box-shadow: 1px 0px 16px 4px #9fb3c3;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .ninja-navbar-nav {
+        flex-direction: row;
+    }
+
+    .ninja-nav-link {
+        justify-content: center;
+    }
+
+    main {
+        margin: 0;
+    }
+
+    .animated-frame {
+        min-height: 100vh;
+        margin-bottom: 3rem;
+    }
+
+    .ninjaheader {
+        border-bottom: 1px solid #eaeaea;
+    }
+}
+
+/* Large screens */
+@media only screen and (min-width: 600px) {
+    .ninja-navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+
+        .ninja-navbar:hover {
+            width: 16rem;
+        }
+
+            .ninja-navbar:hover .link-text {
+                display: inline;
+            }
+
+            .ninja-navbar:hover .logo svg {
+                margin-left: 11rem;
+            }
+
+            .ninja-navbar:hover .logo-text {
+                left: 0px;
+            }
+
+    .ninja-nav-item:last-child {
+        margin-top: auto;
+    }
+
+    .animated-frame {
+        min-height: 100vh;
+        margin-left: 5rem;
+    }
+
+    .ninjaheader {
+        border-bottom: 1px solid #eaeaea;
+        margin-left: 5rem;
+    }
+}
+
+
+.animated-frame {
+    background-color: whitesmoke;
 }
