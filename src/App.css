@@ -37,6 +37,7 @@ main {
     background-color: var(--bg-primary);
     transition: width 600ms ease;
     overflow: hidden;
+    z-index: 10;
 }
 
 .ninja-navbar-nav {
@@ -205,5 +206,5 @@ main {
 
 
 .animated-frame {
-    background-color: whitesmoke;
+    background-color: white;
 }

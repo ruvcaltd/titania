@@ -35,7 +35,7 @@ const Appbar = (props:any) => {
     return <div className="ninjaheader">
     
     <div className="row m-0">
-        <div style={{paddingTop:"17px", paddingLeft:"10px"}}>
+        <div style={{paddingTop:"17px"}}>
             <img src="./images/logo_blue.png" width="150px" />
         </div>
             <div className="ml-auto mr-1 row">
